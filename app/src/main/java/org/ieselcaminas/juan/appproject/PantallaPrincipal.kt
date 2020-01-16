@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import org.ieselcaminas.juan.appproject.databinding.PantallaPrincipalBinding
@@ -28,15 +29,22 @@ class PantallaPrincipal : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.pantalla_principal, container, false)
 
-        adapter = PlacesListAdapter(context!!)
+
+        adapter = PlacesListAdapter(PlaceListener { placeId ->
+            Toast.makeText(context, "${placeId}", Toast.LENGTH_SHORT).show()
+        })
+
         binding.placesRecycler.layoutManager = LinearLayoutManager(context)
         binding.placesRecycler.adapter = adapter
+
         observeData()
+
 
 
         return binding.root
 
     }
+
 
     fun observeData(){
         binding.progressBar.visibility = View.VISIBLE//se pone antes de q muestre los datos

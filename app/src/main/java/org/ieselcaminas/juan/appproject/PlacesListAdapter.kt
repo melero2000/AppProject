@@ -1,23 +1,20 @@
 package org.ieselcaminas.juan.appproject
 
-import android.content.Context
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.places_item.view.*
-import org.ieselcaminas.juan.appproject.databinding.PantallaPrincipalBinding
 import org.ieselcaminas.juan.appproject.databinding.PlacesItemBinding
 
 
-class PlacesListAdapter(val context: Context): ListAdapter<Place, PlacesListAdapter.MainViewHolder>(SleepNightDiffCallback()) {
+class PlacesListAdapter(val clickListener: PlaceListener): ListAdapter<Place, PlacesListAdapter.MainViewHolder>(SleepNightDiffCallback()) {
 
     private var dataListPlaces = mutableListOf<Place>()
-
-    private lateinit var binding: PantallaPrincipalBinding
 
     fun setListDataPlaces(data: MutableList<Place>){
         dataListPlaces = data
@@ -30,11 +27,11 @@ class PlacesListAdapter(val context: Context): ListAdapter<Place, PlacesListAdap
 
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        holder.bindView(getItem(position))
+        holder.bindView(getItem(position), clickListener)
     }
 
 
-    class MainViewHolder(binding: PlacesItemBinding): RecyclerView.ViewHolder(binding.root) {
+    class MainViewHolder(val binding: PlacesItemBinding): RecyclerView.ViewHolder(binding.root) {
 
         companion object {
             fun from(parent: ViewGroup): MainViewHolder {
@@ -43,11 +40,13 @@ class PlacesListAdapter(val context: Context): ListAdapter<Place, PlacesListAdap
                 return MainViewHolder(binding)
             }
         }
-        fun bindView(place: Place) {
+        fun bindView(place: Place, clickListener: PlaceListener) {
             //Glide es una libreria que carga las URL de las imagenes directamente en el ImageView así podremos trabajar muy facilmente con imagenes y firebase
-            Glide.with(itemView).load(place.imageURL).into(itemView.place_photo)
-            itemView.place_location_info.text = place.location
-            itemView.place_name.text = place.name
+            Glide.with(itemView).load(place.imageURL).into(binding.placePhoto)
+            binding.placeLocationInfo.text = place.location
+            binding.placeName.text = place.name
+            binding.clickListener = clickListener
+            binding.executePendingBindings()
 
         }
 
@@ -65,9 +64,13 @@ class PlacesListAdapter(val context: Context): ListAdapter<Place, PlacesListAdap
         override fun areContentsTheSame(oldItem: Place, newItem: Place): Boolean {
             return oldItem == newItem // como es un dataclass comparara campo a campo
         }
-
     }
 
+
+}
+
+class PlaceListener(val clickListener: (placeId: String) -> Unit){
+    fun onClick(place: Place) = clickListener(place.id)
 }
 
 
