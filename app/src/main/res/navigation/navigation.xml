@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/pantallaInicio">
+    <fragment
+        android:id="@+id/pantallaPrincipal"
+        android:name="org.ieselcaminas.juan.appproject.PantallaPrincipal"
+        android:label="pantalla_principal"
+        tools:layout="@layout/pantalla_principal" />
+    <fragment
+        android:id="@+id/pantallaInicio"
+        android:name="org.ieselcaminas.juan.appproject.PantallaInicio"
+        android:label="PantallaInicio" >
+        <action
+            android:id="@+id/action_pantallaInicio_to_pantallaPrincipal"
+            app:destination="@id/pantallaPrincipal" />
+    </fragment>
+</navigation>

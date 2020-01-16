@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "948663555826",
+    "firebase_url": "https://lugaresencantados-d80dc.firebaseio.com",
+    "project_id": "lugaresencantados-d80dc",
+    "storage_bucket": "lugaresencantados-d80dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948663555826:android:38a957c749d7133870a26b",
+        "android_client_info": {
+          "package_name": "org.ieselcaminas.juan.appproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948663555826-epo1ko6ni6bdnau4asoqaqp1b67353i3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.ieselcaminas.juan.appproject",
+            "certificate_hash": "08f27d4d64b2dc27fe98dc439a9289e890bfdf5b"
+          }
+        },
+        {
+          "client_id": "948663555826-2fg1j4f9rptqaon6rgqa7th05fdue8su.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.ieselcaminas.juan.appproject",
+            "certificate_hash": "7f390a4013b97b4be664271f080fc3cb2fe8da8a"
+          }
+        },
+        {
+          "client_id": "948663555826-09rb11a5hj1ge1pej1eltan6m5e6uvb7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3gxV7idzFVO766NWmUWtxPx58itxZ4I8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948663555826-09rb11a5hj1ge1pej1eltan6m5e6uvb7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
