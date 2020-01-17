@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject.PantallaInicio
+package org.ieselcaminas.juan.appproject.pantallaInicio
 
 import android.app.Activity
 import android.content.Intent

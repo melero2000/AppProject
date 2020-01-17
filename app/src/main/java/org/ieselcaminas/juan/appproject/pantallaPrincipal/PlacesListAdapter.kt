@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject.PantallaPrincipal
+package org.ieselcaminas.juan.appproject.pantallaPrincipal
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

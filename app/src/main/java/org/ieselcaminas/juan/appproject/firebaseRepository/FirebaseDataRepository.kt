@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject.FirebaseRepository
+package org.ieselcaminas.juan.appproject.firebaseRepository
 
 import android.util.Log
 import androidx.lifecycle.LiveData

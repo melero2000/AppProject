@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject.FirebaseLogin
+package org.ieselcaminas.juan.appproject.firebaseLogin
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map

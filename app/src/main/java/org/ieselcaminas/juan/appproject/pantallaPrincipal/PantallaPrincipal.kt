@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject.PantallaPrincipal
+package org.ieselcaminas.juan.appproject.pantallaPrincipal
 
 
 import android.os.Bundle
@@ -39,10 +39,9 @@ class PantallaPrincipal : Fragment() {
         viewModel.navigateToPlaceInfo.observe(this, Observer { place ->
             place?.let {
                 this.findNavController().navigate(
-                    PantallaPrincipalDirections.actionPantallaPrincipalToPlaceInfoFull(
-                        place
-                    )
+                    PantallaPrincipalDirections.actionPantallaPrincipalToPlaceInfoFull(  place   )
                 )
+                viewModel.onPlaceInfoNavigated()
             }
 
 

@@ -1,8 +1,8 @@
-package org.ieselcaminas.juan.appproject.PantallaPrincipal
+package org.ieselcaminas.juan.appproject.pantallaPrincipal
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.Job
-import org.ieselcaminas.juan.appproject.FirebaseRepository.FirebaseDataRepository
+import org.ieselcaminas.juan.appproject.firebaseRepository.FirebaseDataRepository
 import org.ieselcaminas.juan.appproject.Place
 
 

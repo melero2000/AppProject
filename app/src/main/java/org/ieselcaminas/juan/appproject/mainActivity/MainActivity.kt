@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject.MainActivity
+package org.ieselcaminas.juan.appproject.mainActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

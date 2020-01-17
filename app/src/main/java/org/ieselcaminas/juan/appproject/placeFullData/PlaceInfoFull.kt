@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject.PlaceFullData
+package org.ieselcaminas.juan.appproject.placeFullData
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -22,11 +22,24 @@ class PlaceInfoFull : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.place_info_full_fragment, container, false)
 
-        val placeId = arguments?.getString("placeKey")
+        val arguments = PlaceInfoFullArgs.fromBundle(arguments!!)
 
-        binding.placeIdTextview.text = placeId
+        // Create an instance of the ViewModel Factory.
+        val viewModelFactory = PlaceInfoFullViewModelFactory(arguments.placeKey)
 
-        Toast.makeText(context, placeId, Toast.LENGTH_SHORT).show()
+        // Get a reference to the ViewModel associated with this fragment.
+        val placeInfoFullViewModel =
+            ViewModelProviders.of(
+                this, viewModelFactory).get(PlaceInfoFullViewModel::class.java)
+
+        binding.placeInfoFullViewModel = placeInfoFullViewModel
+
+        binding.placeIdTextview.text = arguments.placeKey
+
+        Toast.makeText(context, arguments.placeKey, Toast.LENGTH_SHORT).show()
+
+
+        binding.setLifecycleOwner(this)
 
         return binding.root
     }
