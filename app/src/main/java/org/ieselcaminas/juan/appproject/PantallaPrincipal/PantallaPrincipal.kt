@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject
+package org.ieselcaminas.juan.appproject.PantallaPrincipal
 
 
 import android.os.Bundle
@@ -6,13 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import org.ieselcaminas.juan.appproject.databinding.PantallaPrincipalBinding
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.DiffUtil
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import org.ieselcaminas.juan.appproject.*
 
 /**
  * A simple [Fragment] subclass.
@@ -29,15 +29,29 @@ class PantallaPrincipal : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.pantalla_principal, container, false)
 
+        observeData()
+        adapter =
+            PlacesListAdapter(
+                PlaceListener { placeId ->
+                    viewModel.onPlaceClicked(placeId)
+                })
 
-        adapter = PlacesListAdapter(PlaceListener { placeId ->
-            Toast.makeText(context, "${placeId}", Toast.LENGTH_SHORT).show()
+        viewModel.navigateToPlaceInfo.observe(this, Observer { place ->
+            place?.let {
+                this.findNavController().navigate(
+                    PantallaPrincipalDirections.actionPantallaPrincipalToPlaceInfoFull(
+                        place
+                    )
+                )
+            }
+
+
         })
 
         binding.placesRecycler.layoutManager = LinearLayoutManager(context)
         binding.placesRecycler.adapter = adapter
 
-        observeData()
+
 
 
 

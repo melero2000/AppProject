@@ -6,7 +6,7 @@
     app:startDestination="@id/pantallaInicio">
     <fragment
         android:id="@+id/pantallaPrincipal"
-        android:name="org.ieselcaminas.juan.appproject.PantallaPrincipal"
+        android:name="org.ieselcaminas.juan.appproject.PantallaPrincipal.PantallaPrincipal"
         android:label="pantalla_principal"
         tools:layout="@layout/pantalla_principal" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/pantallaInicio"
-        android:name="org.ieselcaminas.juan.appproject.PantallaInicio"
+        android:name="org.ieselcaminas.juan.appproject.PantallaInicio.PantallaInicio"
         android:label="PantallaInicio" >
         <action
             android:id="@+id/action_pantallaInicio_to_pantallaPrincipal"
@@ -23,7 +23,11 @@
     </fragment>
     <fragment
         android:id="@+id/placeInfoFull"
-        android:name="org.ieselcaminas.juan.appproject.PlaceInfoFull"
+        android:name="org.ieselcaminas.juan.appproject.PlaceFullData.PlaceInfoFull"
         android:label="place_info_full_fragment"
-        tools:layout="@layout/place_info_full_fragment" />
+        tools:layout="@layout/place_info_full_fragment" >
+        <argument
+            android:name="placeKey"
+            app:argType="string" />
+    </fragment>
 </navigation>

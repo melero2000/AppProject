@@ -1,14 +1,17 @@
-package org.ieselcaminas.juan.appproject
+package org.ieselcaminas.juan.appproject.PantallaPrincipal
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.Job
+import org.ieselcaminas.juan.appproject.FirebaseRepository.FirebaseDataRepository
+import org.ieselcaminas.juan.appproject.Place
 
 
 class PantallaPrincipalViewModel() : ViewModel() {
 
     private var viewModelJob = Job()
 
-    val firebaseDataRepository = FirebaseDataRepository()
+    val firebaseDataRepository =
+        FirebaseDataRepository()
 
     //está función nos dará la información de firebase
     fun fetchUserData(): LiveData<MutableList<Place>>{

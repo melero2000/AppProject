@@ -1,4 +1,4 @@
-package org.ieselcaminas.juan.appproject
+package org.ieselcaminas.juan.appproject.FirebaseLogin
 
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.FirebaseAuth

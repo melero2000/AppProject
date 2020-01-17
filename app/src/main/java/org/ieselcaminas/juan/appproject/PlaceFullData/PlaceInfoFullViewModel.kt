@@ -1,7 +1,7 @@
-package org.ieselcaminas.juan.appproject
+package org.ieselcaminas.juan.appproject.PlaceFullData
 
 import androidx.lifecycle.ViewModel
 
 class PlaceInfoFullViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
 }

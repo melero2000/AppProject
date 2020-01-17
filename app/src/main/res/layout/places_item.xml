@@ -9,7 +9,7 @@
             type="org.ieselcaminas.juan.appproject.Place" />
         <variable
             name="clickListener"
-            type="org.ieselcaminas.juan.appproject.PlaceListener" />
+            type="org.ieselcaminas.juan.appproject.PantallaPrincipal.PlaceListener" />
 
     </data>
 

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="pantallaPrincipalViewModel"
-            type="org.ieselcaminas.juan.appproject.PantallaPrincipalViewModel" />
+            type="org.ieselcaminas.juan.appproject.PantallaPrincipal.PantallaPrincipalViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
